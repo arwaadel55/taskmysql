@@ -2,20 +2,22 @@ const express = require("express");
 const cors=require("cors")
 const mysql = require("mysql2");
 const app = express();
-const port = 3306;
+
 const connection = mysql.createConnection({
   host: "b8jjojqgedpye0j1dccm-mysql.services.clever-cloud.com",
   database: "b8jjojqgedpye0j1dccm",
   user: "untvw3bbcjxev3rr",
-  password: "lBuD8HLxTKFSVrPJn0AZ"
-  
+  password: "lBuD8HLxTKFSVrPJn0AZ",
+  port:3306
 });
+
 
 connection.connect((error) => {
   if (error) {
     console.error('Error connecting to MySQL database:', error);
   } else {
     console.log('Connected to MySQL database!');
+    
   }
 });
 
@@ -56,6 +58,3 @@ app.get("/",(req, res, next) => {
   return res.send("hello world");
 })
 
-app.listen(port, () => {
-  console.log(`server is running on port.....${port}`);
-});
