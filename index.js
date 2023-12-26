@@ -1,14 +1,14 @@
 const express = require("express");
 const cors=require("cors")
-const mysql2 = require("mysql2");
+const mysql = require("mysql2");
 const app = express();
 const port = 3306;
-const connection = mysql2.createConnection({
+const connection = mysql.createConnection({
   host: "b8jjojqgedpye0j1dccm-mysql.services.clever-cloud.com",
   database: "b8jjojqgedpye0j1dccm",
   user: "untvw3bbcjxev3rr",
-  password: "lBuD8HLxTKFSVrPJn0AZ",
-  port :"3306"
+  password: "lBuD8HLxTKFSVrPJn0AZ"
+  
 });
 
 connection.connect((error) => {
